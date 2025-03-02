@@ -145,4 +145,26 @@
     <dynamics damping="0.0" friction="10.0"/>
   </joint>
 
+  <gazebo reference="base_link">
+    <material>Gazebo/Gray</material>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="link2">
+    <material>Gazebo/Gray</material>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="link3">
+    <material>Gazebo/Gray</material>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="link4">
+    <material>Gazebo/Gray</material>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="link5">
+    <material>Gazebo/Gray</material>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+
+
 </robot>
