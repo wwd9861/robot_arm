@@ -20,6 +20,7 @@ setup(
     entry_points={
         "console_scripts": [
             "ik_solver = robot_arm.ik_solver:main",
+            "drawer = robot_arm.drawer:main",
         ],
     },
 )
