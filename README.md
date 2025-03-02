@@ -9,5 +9,9 @@ rviz2
 ```
 
 ```
-ros2 run joint_state_publisher_gui joint_state_publisher_gui
+ros2 run robot_arm ik_solver 
+```
+
+```
+ros2 service call /ik robot_arm_msg/srv/Coordinate "{x: 100, y: 100, z: 100, phi: 0.0}"
 ```
