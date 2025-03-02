@@ -3,7 +3,7 @@ project(robot_arm_description)
 
 find_package(ament_cmake REQUIRED)
 
-install(DIRECTORY meshes launch urdf DESTINATION share/${PROJECT_NAME})
+install(DIRECTORY meshes launch urdf config DESTINATION share/${PROJECT_NAME})
 
 ament_package()
 

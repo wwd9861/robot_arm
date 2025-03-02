@@ -146,25 +146,72 @@
   </joint>
 
   <gazebo reference="base_link">
-    <material>Gazebo/Gray</material>
+    <material>Gazebo/White</material>
     <selfCollide>true</selfCollide>
   </gazebo>
   <gazebo reference="link2">
-    <material>Gazebo/Gray</material>
+    <material>Gazebo/White</material>
     <selfCollide>true</selfCollide>
   </gazebo>
   <gazebo reference="link3">
-    <material>Gazebo/Gray</material>
+    <material>Gazebo/White</material>
     <selfCollide>true</selfCollide>
   </gazebo>
   <gazebo reference="link4">
-    <material>Gazebo/Gray</material>
+    <material>Gazebo/White</material>
     <selfCollide>true</selfCollide>
   </gazebo>
   <gazebo reference="link5">
-    <material>Gazebo/Gray</material>
+    <material>Gazebo/White</material>
     <selfCollide>true</selfCollide>
   </gazebo>
 
+  <ros2_control name="GazeboSystem" type="system">
+    <hardware>
+      <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+    </hardware>
+    <joint name="revolute1">
+      <command_interface name="position">
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+    
+    <joint name="revolute2">
+      <command_interface name="position">
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="revolute3">
+      <command_interface name="position">
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+
+    <joint name="revolute4">
+      <command_interface name="position">
+      </command_interface>
+      <state_interface name="position">
+        <param name="initial_value">0</param>
+      </state_interface>
+      <state_interface name="velocity"/>
+    </joint>
+
+  </ros2_control>
+
+  <gazebo>
+    <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+      <parameters>$(find robot_arm_description)/config/joint_controller.yaml</parameters>
+    </plugin>
+  </gazebo>
 
 </robot>
