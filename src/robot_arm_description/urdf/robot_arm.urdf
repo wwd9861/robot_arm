@@ -1,0 +1,148 @@
+<?xml version="1.0" ?>
+
+<robot name="robot_arm">
+  <material name="silver">
+    <color rgba="0.700 0.700 0.700 1.000"/>
+  </material>
+
+  <link name="world">
+  </link>
+  <link name="base_link">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.0003702195807782159 0.0247346966705522 0.021272133430974175"/>
+      <mass value="0.5"/>
+      <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="link2">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.02901411626864773 1.7594797702136233e-09 0.027639581732607187"/>
+      <mass value="0.5"/>
+      <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="-0.0 -0.0425 -0.053"/>
+      <geometry>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="-0.0 -0.0425 -0.053"/>
+      <geometry>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link2.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="link3">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.02590765142074713 -1.7213820993622342e-09 0.05237647904821559"/>
+      <mass value="0.5"/>
+      <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.024625 -0.0425 -0.116"/>
+      <geometry>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.024625 -0.0425 -0.116"/>
+      <geometry>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link3.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="link4">
+    <inertial>
+      <origin rpy="0 0 0" xyz="-0.025907651420749293 1.721367957896458e-09 0.0523764790482156"/>
+      <mass value="0.5"/>
+      <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.024625 -0.0425 -0.221"/>
+      <geometry>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.024625 -0.0425 -0.221"/>
+      <geometry>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link4.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <link name="link5">
+    <inertial>
+      <origin rpy="0 0 0" xyz="0.02509096066880486 -1.8665624601510444e-15 0.007639554082144229"/>
+      <mass value="0.5"/>
+      <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0.024625 -0.0425 -0.326"/>
+      <geometry>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="silver"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0.024625 -0.0425 -0.326"/>
+      <geometry>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link5.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint name="base_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
+  <joint name="revolute1" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 0.0425 0.053"/>
+    <parent link="base_link"/>
+    <child link="link2"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit effort="10" lower="-1.570796" upper="1.570796" velocity="20.0" />
+    <dynamics damping="0.0" friction="10.0"/>
+  </joint>
+  <joint name="revolute2" type="revolute">
+    <origin rpy="0 0 0" xyz="-0.024625 0.0 0.063"/>
+    <parent link="link2"/>
+    <child link="link3"/>
+    <axis xyz="1.0 0.0 0.0"/>
+    <limit effort="10" lower="-1.570796" upper="1.570796" velocity="20.0" />
+    <dynamics damping="0.0" friction="10.0"/>
+  </joint>
+  <joint name="revolute3" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.105"/>
+    <parent link="link3"/>
+    <child link="link4"/>
+    <axis xyz="-1.0 -0.0 -0.0"/>
+    <limit effort="10" lower="0.0" upper="3.141592" velocity="20.0" />
+    <dynamics damping="0.0" friction="10.0"/>
+  </joint>
+  <joint name="revolute4" type="revolute">
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.105"/>
+    <parent link="link4"/>
+    <child link="link5"/>
+    <axis xyz="1.0 -0.0 0.0"/>
+    <limit effort="10" lower="-1.570796" upper="1.570796" velocity="20.0" />
+    <dynamics damping="0.0" friction="10.0"/>
+  </joint>
+
+</robot>
