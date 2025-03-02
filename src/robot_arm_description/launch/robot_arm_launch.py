@@ -1,30 +1,38 @@
 import os
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
-from launch.substitutions import LaunchConfiguration
-from launch.actions import DeclareLaunchArgument
+from launch.actions import IncludeLaunchDescription
+from launch.launch_description_sources import PythonLaunchDescriptionSource
+
+
 from launch_ros.actions import Node
 import xacro
 
+
 def generate_launch_description():
-    use_sim_time = LaunchConfiguration("use_sim_time")
 
-    pkg_path = os.path.join(get_package_share_directory("robot_arm_description"))
-    urdf_file = os.path.join(pkg_path, "urdf", "robot_arm.urdf")
-    robot_description = xacro.process_file(urdf_file)
-    params = {"robot_description": robot_description.toxml(), "use_sim_time": use_sim_time}
+    pkg_name = "robot_arm_description"
+    file_subpath = "urdf/robot_arm.urdf"
 
-    return LaunchDescription(
-        [
-            DeclareLaunchArgument(
-                "use_sim_time", default_value="false", description="use sim time"
-            ),
-            Node(
-                package="robot_state_publisher",
-                executable="robot_state_publisher",
-                output="screen",
-                parameters=[params],
-            ),
-        ]
+    xacro_file = os.path.join(get_package_share_directory(pkg_name), file_subpath)
+    robot_description_raw = xacro.process_file(xacro_file).toxml()
+
+    node_robot_state_publisher = Node(
+        package="robot_state_publisher",
+        executable="robot_state_publisher",
+        output="screen",
+        parameters=[{"robot_description": robot_description_raw, "use_sim_time": True}],
     )
 
+    gazebo = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource([os.path.join(get_package_share_directory("gazebo_ros"), "launch"), "/gazebo.launch.py"]),
+    )
+
+    spawn_entity = Node(
+        package="gazebo_ros",
+        executable="spawn_entity.py",
+        arguments=["-topic", "robot_description", "-entity", "my_robot"],
+        output="screen",
+    )
+
+    return LaunchDescription([gazebo, node_robot_state_publisher, spawn_entity])
