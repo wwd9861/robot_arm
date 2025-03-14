@@ -27,19 +27,24 @@ class IKSolver(Node):
 
     def ik_callback(self, request, response):
         c3 = (
-            (sqrt(request.x**2 + request.y**2) - l4 * cos(request.phi)) ** 2 + (request.z - l1 - l4 * sin(request.phi)) ** 2 - l2**2 - l3**2
+            (sqrt(request.x**2 + request.y**2 - 50**2) - l4 * cos(request.phi)) ** 2
+            + (request.z - l1 - l4 * sin(request.phi)) ** 2
+            - l2**2
+            - l3**2
         ) / (2 * l2 * l3)
         s3 = -sqrt(1 - c3**2)
         k1 = l2 + l3 * c3
         k2 = l3 * s3
         theta3 = atan2(s3, c3)
-        theta2 = atan2(request.z - l1 - l4 * sin(request.phi), sqrt(request.x**2 + request.y**2) - l4 * cos(request.phi)) - atan2(k2, k1)
+        theta2 = atan2(
+            request.z - l1 - l4 * sin(request.phi), sqrt(request.x**2 + request.y**2 - 50**2) - l4 * cos(request.phi)
+        ) - atan2(k2, k1)
         theta4 = request.phi - theta2 - theta3
-        theta1 = atan2(request.y, request.x)
-        self.points.positions = [theta1, theta2 - pi / 2, -theta3, theta4]
+        theta1 = atan2(request.y, request.x) - atan2(50, sqrt(request.x**2 + request.y**2 - 50**2))
+        self.points.positions = [theta1, theta2 - pi / 2, theta3, theta4]
         self.data.points = [self.points]
         self.publisher.publish(self.data)
-
+        print(sqrt(request.x**2 + request.y**2 - 50**2))
         return response
 
 

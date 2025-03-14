@@ -35,14 +35,14 @@
       <inertia ixx="0.000963" iyy="0.00091" izz="0.000689" ixy="-0.0" iyz="-2e-06" ixz="-5.1e-05"/>
     </inertial>
     <visual>
-      <origin xyz="-0.022 -0.0 -0.0638" rpy="0 0 0"/>
+      <origin xyz="-0.0 0.0 -0.062" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
-      <origin xyz="-0.022 -0.0 -0.0638" rpy="0 0 0"/>
+      <origin xyz="-0.0 0.0 -0.062" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -117,7 +117,7 @@
     <child link="base_link"/>
   </joint>
   <joint name="revolute1" type="revolute">
-    <origin xyz="0.022 0.0 0.0638" rpy="0 0 0"/>
+    <origin xyz="0.0 0.0 0.062" rpy="0 0 0"/>
     <parent link="base_link"/>
     <child link="link_1"/>
     <axis xyz="0.0 0.0 1.0"/>
