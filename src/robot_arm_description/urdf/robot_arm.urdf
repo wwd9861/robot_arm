@@ -1,109 +1,113 @@
 <?xml version="1.0" ?>
 
 <robot name="robot_arm">
-  <material name="silver">
-    <color rgba="0.700 0.700 0.700 1.000"/>
+  <material name="white">
+    <color rgba="1.0 1.0 1.0 1.000"/>
   </material>
 
   <link name="world">
   </link>
   <link name="base_link">
     <inertial>
-      <origin rpy="0 0 0" xyz="-0.0003702195807782159 0.0247346966705522 0.021272133430974175"/>
-      <mass value="0.5"/>
-      <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+      <origin xyz="0.02199999999927028 0.00010550764230441624 0.026412531993884335" rpy="0 0 0"/>
+      <mass value="2.1649980446638213"/>
+      <inertia ixx="0.004793" iyy="0.004798" izz="0.007227" ixy="0.0" iyz="2e-06" ixz="-0.0"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="silver"/>
+      <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
-  <link name="link2">
+
+  <link name="link_1">
     <inertial>
-      <origin rpy="0 0 0" xyz="-0.02901411626864773 1.7594797702136233e-09 0.027639581732607187"/>
-      <mass value="0.5"/>
-      <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+      <origin xyz="0.003470462191355418 0.00013682029127469518 0.028443076641689977" rpy="0 0 0"/>
+      <mass value="1.0444299778861974"/>
+      <inertia ixx="0.000963" iyy="0.00091" izz="0.000689" ixy="-0.0" iyz="-2e-06" ixz="-5.1e-05"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="-0.0 -0.0425 -0.053"/>
+      <origin xyz="-0.022 -0.0 -0.0638" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link2.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="silver"/>
+      <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.0 -0.0425 -0.053"/>
+      <origin xyz="-0.022 -0.0 -0.0638" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link2.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
-  <link name="link3">
+
+  <link name="link_2">
     <inertial>
-      <origin rpy="0 0 0" xyz="0.02590765142074713 -1.7213820993622342e-09 0.05237647904821559"/>
-      <mass value="0.5"/>
-      <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+      <origin xyz="-0.026722953125704132 0.00013326397239958005 0.06739644020751413" rpy="0 0 0"/>
+      <mass value="1.0723019224070054"/>
+      <inertia ixx="0.002051" iyy="0.001984" izz="0.000559" ixy="0.0" iyz="-3e-06" ixz="0.000178"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0.024625 -0.0425 -0.116"/>
+      <origin xyz="0.003 -0.0002 -0.1178" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link3.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="silver"/>
+      <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.024625 -0.0425 -0.116"/>
+      <origin xyz="0.003 -0.0002 -0.1178" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link3.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
-  <link name="link4">
+
+  <link name="link_3">
     <inertial>
-      <origin rpy="0 0 0" xyz="-0.025907651420749293 1.721367957896458e-09 0.0523764790482156"/>
-      <mass value="0.5"/>
-      <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+      <origin xyz="0.026722953125702827 -0.0001332639723983223 0.06739644020751429" rpy="0 0 0"/>
+      <mass value="1.0723019224070065"/>
+      <inertia ixx="0.002051" iyy="0.001984" izz="0.000559" ixy="0.0" iyz="3e-06" ixz="-0.000178"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0.024625 -0.0425 -0.221"/>
+      <origin xyz="0.003 -0.0004 -0.2228" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link4.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="silver"/>
+      <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.024625 -0.0425 -0.221"/>
+      <origin xyz="0.003 -0.0004 -0.2228" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link4.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
-  <link name="link5">
+
+  <link name="link_4">
     <inertial>
-      <origin rpy="0 0 0" xyz="0.02509096066880486 -1.8665624601510444e-15 0.007639554082144229"/>
-      <mass value="0.5"/>
-      <inertia ixx="1e-3" ixy="0.0" ixz="0.0" iyy="1e-3" iyz="0.0" izz="1e-3"/>
+      <origin xyz="-0.022138072415002766 2.515484565437931e-15 0.008752607826837733" rpy="0 0 0"/>
+      <mass value="0.28036972878940647"/>
+      <inertia ixx="0.000201" iyy="0.000191" izz="0.000152" ixy="-0.0" iyz="0.0" ixz="7e-06"/>
     </inertial>
     <visual>
-      <origin rpy="0 0 0" xyz="0.024625 -0.0425 -0.326"/>
+      <origin xyz="0.003 -0.0002 -0.3278" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link5.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="silver"/>
+      <material name="white"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0.024625 -0.0425 -0.326"/>
+      <origin xyz="0.003 -0.0002 -0.3278" rpy="0 0 0"/>
       <geometry>
-        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link5.stl" scale="0.001 0.001 0.001"/>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
@@ -113,34 +117,34 @@
     <child link="base_link"/>
   </joint>
   <joint name="revolute1" type="revolute">
-    <origin rpy="0 0 0" xyz="0.0 0.0425 0.053"/>
+    <origin xyz="0.022 0.0 0.0638" rpy="0 0 0"/>
     <parent link="base_link"/>
-    <child link="link2"/>
+    <child link="link_1"/>
     <axis xyz="0.0 0.0 1.0"/>
-    <limit effort="10" lower="-1.570796" upper="1.570796" velocity="20.0" />
+    <limit effort="10" lower="-3.141592" upper="3.141592" velocity="20.0" />
     <dynamics damping="0.0" friction="10.0"/>
   </joint>
   <joint name="revolute2" type="revolute">
-    <origin rpy="0 0 0" xyz="-0.024625 0.0 0.063"/>
-    <parent link="link2"/>
-    <child link="link3"/>
-    <axis xyz="1.0 0.0 0.0"/>
+    <origin xyz="-0.025 0.0002 0.054" rpy="0 0 0"/>
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <axis xyz="1.0 0.0 -0.0"/>
     <limit effort="10" lower="-1.570796" upper="1.570796" velocity="20.0" />
     <dynamics damping="0.0" friction="10.0"/>
   </joint>
   <joint name="revolute3" type="revolute">
-    <origin rpy="0 0 0" xyz="0.0 0.0 0.105"/>
-    <parent link="link3"/>
-    <child link="link4"/>
-    <axis xyz="-1.0 -0.0 -0.0"/>
-    <limit effort="10" lower="0.0" upper="3.141592" velocity="20.0" />
+    <origin xyz="0.0 0.0002 0.105" rpy="0 0 0"/>
+    <parent link="link_2"/>
+    <child link="link_3"/>
+    <axis xyz="1.0 -0.0 0.0"/>
+    <limit effort="10" lower="-3.141592" upper="0.0" velocity="20.0" />
     <dynamics damping="0.0" friction="10.0"/>
   </joint>
   <joint name="revolute4" type="revolute">
-    <origin rpy="0 0 0" xyz="0.0 0.0 0.105"/>
-    <parent link="link4"/>
-    <child link="link5"/>
-    <axis xyz="1.0 -0.0 0.0"/>
+    <origin xyz="0.0 -0.0002 0.105" rpy="0 0 0"/>
+    <parent link="link_3"/>
+    <child link="link_4"/>
+    <axis xyz="1.0 0.0 0.0"/>
     <limit effort="10" lower="-1.570796" upper="1.570796" velocity="20.0" />
     <dynamics damping="0.0" friction="10.0"/>
   </joint>
@@ -149,19 +153,19 @@
     <material>Gazebo/White</material>
     <selfCollide>true</selfCollide>
   </gazebo>
-  <gazebo reference="link2">
+  <gazebo reference="link2_1">
     <material>Gazebo/White</material>
     <selfCollide>true</selfCollide>
   </gazebo>
-  <gazebo reference="link3">
+  <gazebo reference="link3_1">
     <material>Gazebo/White</material>
     <selfCollide>true</selfCollide>
   </gazebo>
-  <gazebo reference="link4">
+  <gazebo reference="link4_1">
     <material>Gazebo/White</material>
     <selfCollide>true</selfCollide>
   </gazebo>
-  <gazebo reference="link5">
+  <gazebo reference="link5_1">
     <material>Gazebo/White</material>
     <selfCollide>true</selfCollide>
   </gazebo>
