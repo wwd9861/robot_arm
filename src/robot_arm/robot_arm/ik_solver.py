@@ -40,7 +40,7 @@ class IKSolver(Node):
             request.z - l1 - l4 * sin(request.phi), sqrt(request.x**2 + request.y**2 - 50**2) - l4 * cos(request.phi)
         ) - atan2(k2, k1)
         theta4 = request.phi - theta2 - theta3
-        theta1 = atan2(request.y, request.x) - atan2(50, sqrt(request.x**2 + request.y**2 - 50**2))
+        theta1 = atan2(request.y, request.x) + atan2(50, sqrt(request.x**2 + request.y**2 - 50**2))
         self.points.positions = [theta1, theta2 - pi / 2, theta3, theta4]
         self.data.points = [self.points]
         self.publisher.publish(self.data)

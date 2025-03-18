@@ -7,11 +7,16 @@
 
   <link name="world">
   </link>
+  <joint name="base_joint" type="fixed">
+    <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    <parent link="world"/>
+    <child link="base_link"/>
+  </joint>
   <link name="base_link">
     <inertial>
-      <origin xyz="0.02199999999927028 0.00010550764230441624 0.026412531993884335" rpy="0 0 0"/>
-      <mass value="2.1649980446638213"/>
-      <inertia ixx="0.004793" iyy="0.004798" izz="0.007227" ixy="0.0" iyz="2e-06" ixz="-0.0"/>
+      <origin xyz="-1.1285154625619664e-16 0.000334248090355596 0.05270475953078982" rpy="0 0 0"/>
+      <mass value="2.5305930297877364"/>
+      <inertia ixx="0.004399" iyy="0.004429" izz="0.004405" ixy="-0.0" iyz="-3e-05" ixz="0.0"/>
     </inertial>
     <visual>
       <origin xyz="0 0 0" rpy="0 0 0"/>
@@ -28,21 +33,42 @@
     </collision>
   </link>
 
-  <link name="link_1">
+  <link name="rotate">
     <inertial>
-      <origin xyz="0.003470462191355418 0.00013682029127469518 0.028443076641689977" rpy="0 0 0"/>
-      <mass value="1.0444299778861974"/>
-      <inertia ixx="0.000963" iyy="0.00091" izz="0.000689" ixy="-0.0" iyz="-2e-06" ixz="-5.1e-05"/>
+      <origin xyz="4.5802358023220294e-14 -5.433637081973642e-17 0.004960836668469221" rpy="0 0 0"/>
+      <mass value="0.6631591419630531"/>
+      <inertia ixx="0.000472" iyy="0.000472" izz="0.000933" ixy="-0.0" iyz="0.0" ixz="0.0"/>
     </inertial>
     <visual>
-      <origin xyz="-0.0 0.0 -0.062" rpy="0 0 0"/>
+      <origin xyz="-0.0 0.0 -0.1116" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/rotate.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <origin xyz="-0.0 0.0 -0.1116" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/rotate.stl" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="link_1">
+    <inertial>
+      <origin xyz="0.005073022662102248 1.1129625197867522e-16 0.030468242291165196" rpy="0 0 0"/>
+      <mass value="0.7144960689551971"/>
+      <inertia ixx="0.000504" iyy="0.000445" izz="0.000319" ixy="0.0" iyz="-0.0" ixz="-1.1e-05"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 -0.1216" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
-      <origin xyz="-0.0 0.0 -0.062" rpy="0 0 0"/>
+      <origin xyz="0.0 0.0 -0.1216" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_1.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -51,19 +77,19 @@
 
   <link name="link_2">
     <inertial>
-      <origin xyz="-0.026722953125704132 0.00013326397239958005 0.06739644020751413" rpy="0 0 0"/>
-      <mass value="1.0723019224070054"/>
+      <origin xyz="-0.026722953125703622 0.00013326397239959964 0.06739644020751445" rpy="0 0 0"/>
+      <mass value="1.0723019224070052"/>
       <inertia ixx="0.002051" iyy="0.001984" izz="0.000559" ixy="0.0" iyz="-3e-06" ixz="0.000178"/>
     </inertial>
     <visual>
-      <origin xyz="0.003 -0.0002 -0.1178" rpy="0 0 0"/>
+      <origin xyz="0.025 0.0 -0.1666" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
-      <origin xyz="0.003 -0.0002 -0.1178" rpy="0 0 0"/>
+      <origin xyz="0.025 0.0 -0.1666" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_2.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -72,19 +98,19 @@
 
   <link name="link_3">
     <inertial>
-      <origin xyz="0.026722953125702827 -0.0001332639723983223 0.06739644020751429" rpy="0 0 0"/>
+      <origin xyz="0.02672295312570343 -0.0001332639723983275 0.06739644020751456" rpy="0 0 0"/>
       <mass value="1.0723019224070065"/>
       <inertia ixx="0.002051" iyy="0.001984" izz="0.000559" ixy="0.0" iyz="3e-06" ixz="-0.000178"/>
     </inertial>
     <visual>
-      <origin xyz="0.003 -0.0004 -0.2228" rpy="0 0 0"/>
+      <origin xyz="0.025 -0.0002 -0.2716" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
-      <origin xyz="0.003 -0.0004 -0.2228" rpy="0 0 0"/>
+      <origin xyz="0.025 -0.0002 -0.2716" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_3.stl" scale="0.001 0.001 0.001"/>
       </geometry>
@@ -93,80 +119,90 @@
 
   <link name="link_4">
     <inertial>
-      <origin xyz="-0.022138072415002766 2.515484565437931e-15 0.008752607826837733" rpy="0 0 0"/>
+      <origin xyz="-0.022138072415002215 2.5575291463440436e-15 0.008752607826837788" rpy="0 0 0"/>
       <mass value="0.28036972878940647"/>
       <inertia ixx="0.000201" iyy="0.000191" izz="0.000152" ixy="-0.0" iyz="0.0" ixz="7e-06"/>
     </inertial>
     <visual>
-      <origin xyz="0.003 -0.0002 -0.3278" rpy="0 0 0"/>
+      <origin xyz="0.025 -0.0 -0.3766" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
       <material name="white"/>
     </visual>
     <collision>
-      <origin xyz="0.003 -0.0002 -0.3278" rpy="0 0 0"/>
+      <origin xyz="0.025 -0.0 -0.3766" rpy="0 0 0"/>
       <geometry>
         <mesh filename="file:///home/wwd9861/robot_arm_ws/src/robot_arm_description/meshes/link_4.stl" scale="0.001 0.001 0.001"/>
       </geometry>
     </collision>
   </link>
-  <joint name="base_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
-    <parent link="world"/>
-    <child link="base_link"/>
-  </joint>
+
+
   <joint name="revolute1" type="revolute">
-    <origin xyz="0.0 0.0 0.062" rpy="0 0 0"/>
+    <origin xyz="0.0 0.0 0.1116" rpy="0 0 0"/>
     <parent link="base_link"/>
-    <child link="link_1"/>
+    <child link="rotate"/>
     <axis xyz="0.0 0.0 1.0"/>
     <limit effort="10" lower="-3.141592" upper="3.141592" velocity="20.0" />
     <dynamics damping="0.0" friction="10.0"/>
   </joint>
+
+  <joint name="fixed1" type="fixed">
+    <origin xyz="-0.0 0.0 0.01" rpy="0 0 0"/>
+    <parent link="rotate"/>
+    <child link="link_1"/>
+  </joint>
+
   <joint name="revolute2" type="revolute">
-    <origin xyz="-0.025 0.0002 0.054" rpy="0 0 0"/>
+    <origin xyz="-0.025 0.0 0.045" rpy="0 0 0"/>
     <parent link="link_1"/>
     <child link="link_2"/>
-    <axis xyz="1.0 0.0 -0.0"/>
-    <limit effort="10" lower="-1.570796" upper="1.570796" velocity="20.0" />
+    <axis xyz="-1.0 0.0 0.0"/>
+    <limit effort="10" lower="-3.141592" upper="3.141592" velocity="20.0" />
     <dynamics damping="0.0" friction="10.0"/>
   </joint>
+
   <joint name="revolute3" type="revolute">
     <origin xyz="0.0 0.0002 0.105" rpy="0 0 0"/>
     <parent link="link_2"/>
     <child link="link_3"/>
-    <axis xyz="1.0 -0.0 0.0"/>
-    <limit effort="10" lower="-3.141592" upper="0.0" velocity="20.0" />
+    <axis xyz="-1.0 -0.0 0.0"/>
+    <limit effort="10" lower="-3.141592" upper="3.141592" velocity="20.0" />
     <dynamics damping="0.0" friction="10.0"/>
   </joint>
+
   <joint name="revolute4" type="revolute">
     <origin xyz="0.0 -0.0002 0.105" rpy="0 0 0"/>
     <parent link="link_3"/>
     <child link="link_4"/>
-    <axis xyz="1.0 0.0 0.0"/>
-    <limit effort="10" lower="-1.570796" upper="1.570796" velocity="20.0" />
+    <axis xyz="-1.0 0.0 0.0"/>
+    <limit effort="10" lower="-3.141592" upper="3.141592" velocity="20.0" />
     <dynamics damping="0.0" friction="10.0"/>
   </joint>
 
   <gazebo reference="base_link">
+    <material>Gazebo/Blue</material>
+    <selfCollide>true</selfCollide>
+  </gazebo>
+  <gazebo reference="link_1">
     <material>Gazebo/White</material>
     <selfCollide>true</selfCollide>
   </gazebo>
-  <gazebo reference="link2_1">
+  <gazebo reference="link_2">
     <material>Gazebo/White</material>
     <selfCollide>true</selfCollide>
   </gazebo>
-  <gazebo reference="link3_1">
+  <gazebo reference="link_3">
     <material>Gazebo/White</material>
     <selfCollide>true</selfCollide>
   </gazebo>
-  <gazebo reference="link4_1">
+  <gazebo reference="link_4">
     <material>Gazebo/White</material>
     <selfCollide>true</selfCollide>
   </gazebo>
-  <gazebo reference="link5_1">
-    <material>Gazebo/White</material>
+  <gazebo reference="rotate">
+    <material>Gazebo/Blue</material>
     <selfCollide>true</selfCollide>
   </gazebo>
 
