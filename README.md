@@ -16,4 +16,4 @@ ros2 run robot_arm ik_solver
 ros2 service call /ik robot_arm_msg/srv/Coordinate "{x: 100, y: 100, z: 100, phi: 0.0}"
 ```
 
-![Screencastfrom03-14-2025021305PM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/bde3ec08-a61a-4983-ad18-5219f97c41da)
+![Screencastfrom03-18-2025073537PM-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/106f5159-c871-49dc-877e-11e40df330be)
